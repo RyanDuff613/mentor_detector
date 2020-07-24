@@ -3,7 +3,7 @@
 <% if @technologies.any? %>
   <ul>
     <% @technologies.each do |technology| %>
-      <li><%= link_to technology.technology, technologies_path%></li>
+      <li><%= link_to technology.technology, technology_path(technology) %></li>
     <% end %>
    </ul>
 <% else %>

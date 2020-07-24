@@ -46,7 +46,7 @@ class User < ApplicationRecord
 
   private
     def user_params
-      params.require(:user).permit(:name, :genre)
+      params.require(:username).permit(:is_mentor)
     end
 
 end

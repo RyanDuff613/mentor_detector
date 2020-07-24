@@ -1,0 +1,11 @@
+<h5>a list of all technologies</h5>
+
+<% if @technologies.any? %>
+  <ul>
+    <% @technologies.each do |technology| %>
+      <li><%= link_to technology.technology, technologies_path%></li>
+    <% end %>
+   </ul>
+<% else %>
+  <p>No technologies in database</p>
+<% end %>

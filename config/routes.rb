@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :technologies 
+  resources :users, :technologies
+  get '/', to: 'landings#landing'
 end

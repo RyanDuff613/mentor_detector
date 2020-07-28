@@ -9,5 +9,17 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation%>
   <br />
+  <%= f.label "First Name" %>
+  <%= f.text_field :first_name %>
+  <br />
+  <%= f.label "Last Name"%>
+  <%= f.text_field :last_name %>
+  <br />
+  <select id=":is_mentor" name="is_mentor">
+    <option value=true>I want to be a mentor</option>
+    <option value=false>I want to find a mentor</option>
+  </select>
+  <%# <%= f.select :is_mentor, options_for_select(["I want to be a mentor", true], ["i want ot find a mentor", false])%> %>
+  <br />
   <%= f.submit "Sign Up" %>
 <% end %>

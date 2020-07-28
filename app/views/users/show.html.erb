@@ -1,3 +1,7 @@
 <h5>user show page</h5>
 
 <p>user email: <%= @user.email %></p> 
+<p>userType: <%= @user.is_mentor %></p>
+<p><%= link_to "Delete account", user_path(@user),
+                                  :data => {:confirm => "Confirm to delete",
+                                  :method => 'delete'} %></p>

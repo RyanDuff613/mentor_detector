@@ -5,7 +5,8 @@
 <p>last_name:<%= @user.last_name %></p>
 <p>phone:<%= @user.phone %></p>
 <p>description:<%= @user.description %></p>
-<p>userType: <%= @user.is_mentor %></p>
+<p>is_mentor: <%= @user.is_mentor %></p>
+<p><%= link_to "Edit User Information", edit_user_path(@user) %></p>
 <p><%= link_to "Delete account", user_path(@user),
                                   :data => {:confirm => "Confirm to delete",
                                 :method => 'delete'} %></p>

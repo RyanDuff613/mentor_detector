@@ -1,0 +1,21 @@
+<h5>edit</h5>
+<%= form_for @user do |f| %>
+  <%= f.label "Edit Email"%>
+  <%= f.text_field :email %>
+  <br/>
+  <%= f.label "Edit First Name" %>
+  <%= f.text_field :first_name %>
+  <br />
+  <%= f.label "Edit Last Name"%>
+  <%= f.text_field :last_name %>
+  <br />
+  <%= f.label "Edit Phone Number"%>
+  <%= f.text_field :phone %>
+  <br />
+  <%= f.label "Edit Description"%>
+  <%= f.text_field :description %>
+  <br />
+  <%= f.select :is_mentor, [["I want to be a mentor", "true"],['I want to find a mentor', "false"]]%>
+  <br />
+  <%= f.submit "Update Your Info" %>
+<% end %>

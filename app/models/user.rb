@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   attr_accessor :password
-  validates_confirmation_of :password
   validates :email, :presence => true, :uniqueness => true
+  validates_confirmation_of :password
   validates_length_of :password, minimum: 6
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
   before_save :encrypt_password
   has_many :technologies
 

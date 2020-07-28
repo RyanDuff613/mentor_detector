@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       render :signup2
     else
       flash[:alert] = "sign-up failed, please try again"
-      redirect_to '/signup'
+      render :new
     end
   end
 
@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    session.destroy
     redirect_to users_path
   end
 

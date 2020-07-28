@@ -13,13 +13,13 @@
     <div>
       <ul id="navbarHolder">
         <% if current_user %>
-          <li class="navbarItem"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></li>
-          <li class="navbarItem"><a href="/signout">Sign-Out</a>
-          <li class="navbarItem"><a href="/users">All users</a></li>
-          <li class="navbarItem"><a href="/technologies">Technologies</a></li>
+          <li class="navbarItem"><%= link_to "my Profile", users_path(current_user.id) %></li>
+          <li class="navbarItem"><a href="/signout">Sign-Out</a></li>
         <% else %>
           <li class="navbarItem"><%= link_to "Sign up", '/signup' %><%= link_to "Sign in", '/signin' %></li>
         <% end %>
+          <li class="navbarItem"><a href="/users">All users</a></li>
+          <li class="navbarItem"><a href="/technologies">Technologies</a></li>
       </ul>
     </div>
 

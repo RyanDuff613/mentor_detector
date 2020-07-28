@@ -1,23 +1,24 @@
 <h5>user show page</h5>
+<div>
+  <ul>
+    <li>user email:<%= @user.email %></li> 
+    <li>first name:<%= @user.first_name %></li>
+    <li>last name:<%= @user.last_name %></li>
+    <li>phone:<%= @user.phone %></li>
+    <li>description:<%= @user.description %></li>
+    <li>is_mentor: <%= @user.is_mentor %></li>
+    <li>city: <%= @user.city %>, <%= @user.state %></li>
+    <% if @user.is_mentor %>
+      <li>your mentees:</li>
+    <% else %>
+      <li>your mentors:</li>
+    <% end %>
+  </ul>
+</div>
 
-<p>user email:<%= @user.email %></p> 
-<p>first name:<%= @user.first_name %></p>
-<p>last_name:<%= @user.last_name %></p>
-<p>phone:<%= @user.phone %></p>
-<p>description:<%= @user.description %></p>
-<p>is_mentor: <%= @user.is_mentor %></p>
-<p>city: <%= @user.city %>, <%= @user.state %></p>
-<% if @user.is_mentor %>
-  <p>your mentees:</p>
-<% else %>
-  <p>your mentors:</p>
-<% end %>
-
-
-<% if current_user.id === @user.id %>
+<% if current_user && current_user.id === @user.id %>
   <p><%= link_to "Edit Your Information", edit_user_path(@user) %></p>
   <p><%= link_to "Delete Your Account", user_path(@user),
                                   :data => {:confirm => "Confirm to delete",
                                   :method => 'delete'} %></p>
 <% end %>
-<p><%= link_to "see list of all users", users_path %></p>

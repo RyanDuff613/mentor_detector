@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Sign up was successful!"
       session[:user_id] = @user.id
-      # render :signup2
       redirect_to user_path(@user.id)
     else
       flash[:alert] = "sign-up failed, please try again"

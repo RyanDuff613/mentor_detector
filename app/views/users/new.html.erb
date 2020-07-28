@@ -10,6 +10,7 @@
 
 <h5>sign up form</h5>
 <%= form_for @user do |f| %>
+  <p>Required:</p>
   <%= f.label "Email"%>
   <%= f.text_field :email %>
   <br/>
@@ -26,6 +27,19 @@
   <%= f.text_field :last_name %>
   <br />
   <%= f.select :is_mentor, [["I want to be a mentor", "true"],['I want to find a mentor', "false"]]%>
+  <br />
+  <p>Optional Info:</p>
+  <%= f.label "Add Phone Number"%>
+  <%= f.text_field :phone %>
+  <br />
+  <%= f.label "What state do you live in?"%>
+  <%= f.text_field :state %>
+  <br />
+  <%= f.label "What city do you live in?"%>
+  <%= f.text_field :city %>
+  <br />
+  <%= f.label "Add a Description of yourself"%>
+  <%= f.text_area :description %>
   <br />
   <%= f.submit "Sign Up" %>
 <% end %>

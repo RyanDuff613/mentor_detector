@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+  font-family: monospace;
+}
+
+a {
+   font-family: monospace;
+}
+
+ul {
+  list-style: none;
+}
+
+ #navbarHolder {
+  list-style-type: none;
+  background-color: grey;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 1px solid white;
+}
+
+.navbarItem a {
+  float: left;
+  display: block;
+  color: white;
+  margin: 2;
+  padding: 2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+.navbarItem a:hover{
+  background-color: rgb(248, 3, 3);
+}

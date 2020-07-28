@@ -10,6 +10,18 @@
   </head>
 
   <body>
+
+    <ul id="navbarHolder">
+      <% if current_user %>
+        <li class="navbarItem"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></li>
+        <li class="navbarItem"><a href="/signout">Sign-Out</a>
+      <% else %>
+        <li class="navbarItem"><%= link_to "Sign up", '/signup' %><%= link_to "Sign in", '/signin' %></li>
+      <% end %>
+    </ul>
+
     <%= yield %>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
   </body>
 </html>

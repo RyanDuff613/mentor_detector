@@ -1,5 +1,20 @@
 <h5>landing page</h5>
 
 <p>Welcome to mentor detector.</p>
-<p>sign in form</p>
-<p><a href="/signup">sign up link</a></p>
+
+<div>
+  <h5>sign in</h5>
+  <%= form_tag signin_path do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+    <br />
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <br />
+    <%= submit_tag "sign in" %>
+  <% end %>
+</div>
+
+<div>
+  <p><a href="/signup">sign up</a></p>
+</div>

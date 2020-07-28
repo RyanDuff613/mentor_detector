@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Sign up was successful!"
       session[:user_id] = @user.id
-      redirect_to '/users'
+      render :signup2
     else
       flash[:alert] = "sign-up failed, please try again"
       redirect_to '/signup'
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:password, :password_confirmation, :first_name, :last_name, :is_mentor, :is_admin, :phone, :email, :city, :state)
+      params.require(:user).permit(:password, :password_confirmation, :first_name, :last_name, :is_mentor, :is_admin, :phone, :email, :city, :state, :description)
     end
 
 end

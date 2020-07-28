@@ -3,7 +3,4 @@ class StaticpagesController < ApplicationController
     render :landing
   end
 
-  def signup
-    render :signup
-  end
 end

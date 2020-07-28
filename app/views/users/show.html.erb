@@ -6,10 +6,18 @@
 <p>phone:<%= @user.phone %></p>
 <p>description:<%= @user.description %></p>
 <p>is_mentor: <%= @user.is_mentor %></p>
-<p>city: <%= @user.city %></p>
-<p>state: <%= @user.state %></p>
+<p>city: <%= @user.city %>, <%= @user.state %></p>
+<% if @user.is_mentor %>
+  <p>your mentees:</p>
+<% else %>
+  <p>your mentors:</p>
+<% end %>
+
 <p><%= link_to "Edit User Information", edit_user_path(@user) %></p>
-<p><%= link_to "Delete account", user_path(@user),
+
+<% if current_user.id === @user.id %>
+  <p><%= link_to "Delete account", user_path(@user),
                                   :data => {:confirm => "Confirm to delete",
                                 :method => 'delete'} %></p>
+<% end %>
 <p><%= link_to "see list of all users", users_path %></p>

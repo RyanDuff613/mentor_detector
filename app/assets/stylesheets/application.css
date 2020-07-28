@@ -39,15 +39,13 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .navbarItem a {
   float: left;
   display: block;
   color: white;
-  margin: 2;
-  padding: 2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -56,4 +54,27 @@ ul {
 
 .navbarItem a:hover{
   background-color: rgb(248, 3, 3);
+}
+
+#footer {
+  list-style-type: none;
+  background-color: grey;
+  display: inline;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: 1px solid white;
+}
+
+#footer li {
+  float: left;
+  display: block;
+  color: white;
+  margin: 2;
+  padding: 2;
+  text-align: center;
+  /* padding: 14px 16px; */
+  /* text-decoration: none; */
+  border: 1px solid white;
 }

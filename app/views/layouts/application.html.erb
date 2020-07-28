@@ -10,18 +10,28 @@
   </head>
 
   <body>
+    <div>
+      <ul id="navbarHolder">
+        <% if current_user %>
+          <li class="navbarItem"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></li>
+          <li class="navbarItem"><a href="/signout">Sign-Out</a>
+          <li class="navbarItem"><a href="/users">All users</a></li>
+          <li class="navbarItem"><a href="/technologies">Technologies</a></li>
+        <% else %>
+          <li class="navbarItem"><%= link_to "Sign up", '/signup' %><%= link_to "Sign in", '/signin' %></li>
+        <% end %>
+      </ul>
+    </div>
 
-    <ul id="navbarHolder">
-      <% if current_user %>
-        <li class="navbarItem"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></li>
-        <li class="navbarItem"><a href="/signout">Sign-Out</a>
-      <% else %>
-        <li class="navbarItem"><%= link_to "Sign up", '/signup' %><%= link_to "Sign in", '/signin' %></li>
-      <% end %>
-    </ul>
-
+    <br />
     <%= yield %>
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+
+    <div id="footer">
+      <ul>
+        <li><%= flash[:alert] %></li>
+        <li><%= flash[:notice] %></li>
+      </ul>
+    </div>
+
   </body>
 </html>

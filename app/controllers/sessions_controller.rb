@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if @user
       flash[:notice] = 'you are signed in'
       session[:user_id] = @user.id
-      redirect_to '/users'
+      redirect_to user_path(@user)
     else
       flash[:alert] = 'signin was unsuccesfull, please try again'
       redirect_to '/signin'

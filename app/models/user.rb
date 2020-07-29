@@ -2,10 +2,10 @@ class User < ApplicationRecord
   attr_accessor :password
   validates :email, :presence => true, :uniqueness => true
   validates_confirmation_of :password
-  validates_length_of :password, minimum: 6
+  # validates_length_of :password, minimum: 6
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  before_save :encrypt_password
+  before_save :encrypt_password, :unless => :password.blank?
   has_and_belongs_to_many :technologies
 
   def encrypt_password
@@ -23,3 +23,6 @@ class User < ApplicationRecord
   end
 
 end
+
+# validates :password, :presence =>true, :confirmation => true, :length => { :within => 6..40 }, :on => :create
+# validates :password, :confirmation => true, :length => { :within => 6..40 }, :on => :update, :unless => lambda{ |user| user.password.blank? } 

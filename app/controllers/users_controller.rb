@@ -34,9 +34,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    binding.pry
-    if @user.update(user_params)
-      redirect_to user_path
+    # binding.pry
+    if @user.update(update_params)
+      render :show
+      # redirect_to user_path
       flash[:notice] = "update was succesfull"
     else
       flash[:alert] = 'something went wrong, try again'
@@ -64,6 +65,17 @@ class UsersController < ApplicationController
                                    :city, 
                                    :state, 
                                    :description)
+    end
+
+    def update_params
+      params.require(:user).permit(:first_name, 
+                                    :last_name, 
+                                    :is_mentor,  
+                                    :phone, 
+                                    :email, 
+                                    :city, 
+                                    :state, 
+                                    :description)
     end
 
 end

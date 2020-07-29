@@ -1,0 +1,21 @@
+<% if @technology.errors.any? %>
+  <h5>Whoops!</h5>
+  <ul>
+    <% @technology.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h5>Add technology:</h5>
+<%= form_for @technology do |f| %>
+  <p>Required:</p>
+  <%= f.label "Language, Framework, Library etc..."%>
+  <%= f.text_field :technology, placeholder: :tech %>
+  <br />
+  <%= f.label "Description"%>
+  <%= f.text_area :description, placeholder: :Description %>
+  <br />
+  <%= f.submit "Add Technology to list" %>
+<% end %>
+<a href="/technologies"></a>
